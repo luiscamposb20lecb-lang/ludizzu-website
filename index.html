@@ -5,9 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luis Campos — Portafolio Gráfico</title>
 <meta name="description" content="Portafolio de diseño gráfico y comunicación visual de Luis Enrique Campos Barquero.">
+
+<!-- Favicon — las dos "z" de Ludizzu (UnifrakturCook) en rosa #f0a8bb -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="alternate icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0b0d10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<!--
+  TIPOGRAFÍA "MONGOOSE" (Kostic Type Foundry) — fuente comercial, no libre.
+  Está disponible en Adobe Fonts. Si tenés Adobe Creative Cloud:
+    1. Entrá a https://fonts.adobe.com/fonts/mongoose
+    2. Creá un "Web Project" y activá Mongoose
+    3. Pegá acá el <link> del kit que te da Adobe, por ejemplo:
+       <link rel="stylesheet" href="https://use.typekit.net/TU_KIT_ID.css">
+  Una vez agregado, el título principal usa Mongoose automáticamente.
+  Mientras tanto se muestra Big Shoulders Display, la alternativa libre más parecida.
+-->
 <style>
   :root{
     --bg:#0b0d10;
@@ -15,12 +33,16 @@
     --bg-panel-2:#191c22;
     --ink:#f3ede2;
     --ink-dim:#c9c4b8;
-    --red:#d81f26;
-    --red-deep:#8f1116;
+    /* Rosa pastel — reemplaza el rojo anterior */
+    --pink:#f0a8bb;
+    --pink-soft:#f7c9d5;
+    --pink-deep:#8d5c69;
+    --pink-dark:#c4899a;   /* rosa pastel oscuro — fondo de contacto */
     --muted:#8b8f97;
     --line:#2a2e35;
-    --olive:#b7b189;
-    --green:#1f6b4a;
+    /* Stack tipográfico del título principal */
+    --display-main:'Mongoose','Big Shoulders Display','Big Shoulders','Anton',
+                   'Archivo Narrow','Oswald',sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -31,7 +53,7 @@
     line-height:1.5;
     overflow-x:hidden;
   }
-  ::selection{ background:var(--red); color:var(--ink); }
+  ::selection{ background:var(--pink); color:var(--ink); }
 
   .display{ font-family:'Anton', sans-serif; text-transform:uppercase; letter-spacing:0.01em; }
   .gothic{ font-family:'UnifrakturCook', serif; font-weight:700; }
@@ -57,10 +79,15 @@
     border-bottom:1px solid var(--line);
   }
   .brandmark{
-    display:flex; align-items:baseline; gap:8px;
-    font-family:'Anton', sans-serif; font-size:20px; letter-spacing:0.03em;
+    display:inline-flex; align-items:center;
+    font-family:'UnifrakturCook', serif; font-weight:700;
+    font-size:28px; line-height:1; letter-spacing:0.01em;
+    color:var(--ink); text-decoration:none;
+    background:none; border:none; padding:0; cursor:pointer;
+    transition:color .2s ease, transform .2s ease;
   }
-  .brandmark span{ color:var(--red); }
+  .brandmark:hover{ color:var(--pink); transform:translateY(-1px); }
+  .brandmark:focus-visible{ outline:2px solid var(--pink); outline-offset:4px; }
   nav ul{
     list-style:none; display:flex; gap:28px;
   }
@@ -73,10 +100,11 @@
   nav a:hover{ color:var(--ink); }
   nav a::after{
     content:''; position:absolute; left:0; bottom:0; width:0; height:2px;
-    background:var(--red); transition:width .25s ease;
+    background:var(--pink); transition:width .25s ease;
   }
   nav a:hover::after{ width:100%; }
-  .nav-toggle{ display:none; }
+  /* Compensa el header fijo al navegar por anclas */
+  section[id], footer[id]{ scroll-margin-top:84px; }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -109,18 +137,21 @@
     display:flex; align-items:center; gap:14px; margin-bottom:18px;
   }
   .eyebrow-row .gothic{ font-size:26px; color:var(--ink); }
-  .eyebrow-row .mono{ font-size:12px; color:var(--red); letter-spacing:0.12em; text-transform:uppercase; }
+  .eyebrow-row .mono{ font-size:12px; color:var(--pink); letter-spacing:0.12em; text-transform:uppercase; }
   .hero h1{
-    font-size:clamp(52px, 11vw, 148px);
-    line-height:0.86;
+    font-family:var(--display-main);
+    font-weight:900;
+    font-size:clamp(64px, 14vw, 190px);
+    line-height:0.82;
+    letter-spacing:0.005em;
     color:var(--ink);
     text-shadow: 3px 3px 0 rgba(0,0,0,0.4);
   }
-  .hero h1 .accent{ color:var(--red); display:block; }
+  .hero h1 .accent{ color:var(--pink); display:block; }
   .hero-sub{
     max-width:560px; margin-top:22px;
     font-size:16px; color:var(--ink-dim);
-    border-left:3px solid var(--red); padding-left:16px;
+    border-left:3px solid var(--pink); padding-left:16px;
   }
   .scroll-cue{
     position:absolute; bottom:22px; left:5vw; z-index:2;
@@ -139,7 +170,7 @@
     border-bottom:1px solid var(--line); padding-bottom:22px;
   }
   .section-head .tag{
-    font-family:'Space Mono', monospace; font-size:12px; color:var(--red);
+    font-family:'Space Mono', monospace; font-size:12px; color:var(--pink);
     text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px; display:block;
   }
   .section-head h2{ font-size:clamp(32px,5vw,58px); }
@@ -157,7 +188,7 @@
     background:var(--bg-panel-2);
   }
   .spec-sheet .label{
-    font-family:'Space Mono', monospace; font-size:11px; color:var(--red);
+    font-family:'Space Mono', monospace; font-size:11px; color:var(--pink);
     text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px;
     border-bottom:1px dashed var(--line); padding-bottom:10px;
   }
@@ -180,8 +211,8 @@
     background:transparent; color:var(--ink-dim); cursor:pointer;
     transition:all .2s ease; border-radius:2px;
   }
-  .filter-btn:hover{ border-color:var(--red); color:var(--ink); }
-  .filter-btn.active{ background:var(--red); border-color:var(--red); color:var(--ink); }
+  .filter-btn:hover{ border-color:var(--pink); color:var(--ink); }
+  .filter-btn.active{ background:var(--pink); border-color:var(--pink); color:#1a1013; font-weight:700; }
 
   /* ---------- GRID ---------- */
   .grid{
@@ -190,8 +221,8 @@
   }
   @media (min-width:901px){
     .grid.few-3 { grid-template-columns:repeat(3, 1fr); }
-    .grid.few-2 { grid-template-columns:repeat(2, 1fr); max-width:calc(2/3 * 100%); }
-    .grid.few-1 { grid-template-columns:1fr; max-width:calc(1/3 * 100%); }
+    .grid.few-2 { grid-template-columns:repeat(2, 1fr); max-width:calc(200% / 3); }
+    .grid.few-1 { grid-template-columns:1fr; max-width:calc(100% / 3); }
   }
   .card{
     background:var(--bg); cursor:pointer; position:relative; overflow:hidden;
@@ -208,7 +239,7 @@
   .card:hover .card-img img{ transform:scale(1.06); filter:grayscale(0) contrast(1.1); }
   .card-body{ padding:18px 20px 22px; }
   .card-cat{
-    font-family:'Space Mono', monospace; font-size:10px; color:var(--red);
+    font-family:'Space Mono', monospace; font-size:10px; color:var(--pink);
     text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px; display:block;
   }
   .card-title{ font-family:'Anton', sans-serif; font-size:22px; text-transform:uppercase; margin-bottom:8px; letter-spacing:0.01em;}
@@ -220,8 +251,13 @@
     padding:5px 10px; text-transform:uppercase; letter-spacing:0.08em;
     opacity:0; transition:opacity .25s ease;
   }
-  .card:hover .card-view{ opacity:1; }
+  .card:hover .card-view, .card:focus-visible .card-view{ opacity:1; }
+  .card:focus-visible{ outline:2px solid var(--pink); outline-offset:-2px; }
   .card.hide{ display:none; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
 
   /* ---------- EXPERIENCE ---------- */
   .exp-item{
@@ -229,7 +265,7 @@
     padding:26px 0; border-bottom:1px solid var(--line);
   }
   .exp-item:first-child{ border-top:1px solid var(--line); }
-  .exp-date{ font-family:'Space Mono', monospace; font-size:12px; color:var(--red); text-transform:uppercase; letter-spacing:0.06em; }
+  .exp-date{ font-family:'Space Mono', monospace; font-size:12px; color:var(--pink); text-transform:uppercase; letter-spacing:0.06em; }
   .exp-role{ font-family:'Anton', sans-serif; font-size:22px; text-transform:uppercase; margin-bottom:6px; }
   .exp-org{ font-family:'Space Mono', monospace; font-size:12px; color:var(--muted); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.05em;}
   .exp-desc{ color:var(--ink-dim); font-size:14.5px; max-width:640px; }
@@ -241,21 +277,14 @@
     letter-spacing:0.04em; padding:10px 16px; border:1px solid var(--line);
     color:var(--ink-dim); background:var(--bg-panel);
   }
-  .chip.red{ border-color:var(--red-deep); color:var(--red); }
+  .chip.red{ border-color:var(--pink-deep); color:var(--pink); }
 
   /* ---------- FOOTER ---------- */
   footer{
-    background:var(--red);
-    color:#1a0505;
+    background:var(--pink-dark);
+    color:#2b1a20;
     padding:90px 5vw 40px;
     position:relative; overflow:hidden;
-  }
-  footer::before{
-    content:'';
-    position:absolute; inset:0;
-    background-image:url('assets/grunge_texture.jpg');
-    background-size:cover; background-position:center;
-    mix-blend-mode:multiply; opacity:0.35;
   }
   .footer-inner{ position:relative; z-index:1; }
   .footer-head{
@@ -263,25 +292,26 @@
     gap:20px; border-bottom:2px solid rgba(0,0,0,0.35); padding-bottom:36px; margin-bottom:36px;
   }
   footer h2{
-    font-size:clamp(40px, 8vw, 90px); color:var(--ink);
+    font-size:clamp(40px, 8vw, 90px); color:#2b1a20;
     line-height:0.9;
   }
   .footer-cta{
-    font-family:'Space Mono', monospace; font-size:13px; color:rgba(0,0,0,0.65);
+    font-family:'Space Mono', monospace; font-size:13px; color:rgba(43,26,32,0.78);
     max-width:260px;
   }
   .footer-contact{
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
     font-family:'Space Mono', monospace; font-size:13px;
   }
-  .footer-contact .label{ display:block; color:rgba(0,0,0,0.55); margin-bottom:6px; text-transform:uppercase; font-size:11px; letter-spacing:0.08em;}
-  .footer-contact a{ color:var(--ink); text-decoration:none; font-size:15px; }
+  .footer-contact .label{ display:block; color:rgba(43,26,32,0.62); margin-bottom:6px; text-transform:uppercase; font-size:11px; letter-spacing:0.08em;}
+  .footer-contact a{ color:#2b1a20; text-decoration:none; font-size:15px; border-bottom:1px solid rgba(43,26,32,0.3); transition:border-color .2s ease; }
+  .footer-contact a:hover{ border-color:#2b1a20; }
   .footer-bottom{
     margin-top:60px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-    font-family:'Space Mono', monospace; font-size:11px; color:rgba(0,0,0,0.5);
+    font-family:'Space Mono', monospace; font-size:11px; color:rgba(43,26,32,0.6);
     text-transform:uppercase; letter-spacing:0.06em;
   }
-  .footer-signature{ font-family:'UnifrakturCook', serif; font-size:30px; color:var(--ink); }
+  .footer-signature{ font-family:'UnifrakturCook', serif; font-size:30px; color:#2b1a20; }
 
   /* ---------- LIGHTBOX ---------- */
   .lightbox{
@@ -302,7 +332,7 @@
     display:flex; align-items:center; justify-content:center; line-height:1;
     transition:background .2s ease;
   }
-  .lightbox-nav:hover{ background:var(--red); border-color:var(--red); }
+  .lightbox-nav:hover{ background:var(--pink); border-color:var(--pink); color:#1a1013; }
   .lightbox-nav.prev{ left:10px; }
   .lightbox-nav.next{ right:10px; }
   .lightbox-nav.hidden{ display:none; }
@@ -316,7 +346,7 @@
     border:1px solid var(--line); background:transparent; padding:10px 16px;
     cursor:pointer; text-transform:uppercase; letter-spacing:0.08em;
   }
-  .lightbox-close:hover{ border-color:var(--red); color:var(--red); }
+  .lightbox-close:hover{ border-color:var(--pink); color:var(--pink); }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
@@ -338,14 +368,16 @@
 <body>
 
 <div class="noise"></div>
+<span id="top"></span>
 
 <header>
-  <div class="brandmark">LUIS<span>·</span>CAMPOS</div>
+  <a class="brandmark" href="#top" id="brandHome" aria-label="Ludizzu — volver al inicio">Ludizzu</a>
   <nav>
     <ul>
       <li><a href="#trabajo">Trabajo</a></li>
       <li><a href="#sobre-mi">Perfil</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#educacion">Educación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -355,11 +387,10 @@
 <section class="hero" style="padding:0;">
   <div class="hero-content">
     <div class="eyebrow-row">
-      <span class="gothic">Ludizzu</span>
       <span class="mono">Portafolio gráfico — 2026</span>
     </div>
-    <h1 class="display">LUIS<span class="accent">CAMPOS</span></h1>
-    <p class="hero-sub">Diseño gráfico, empaque y comunicación visual. Estudiante en ULACIT, actualmente pasante de diseño en Pozuelo — construyendo marcas, artes de empaque y piezas editoriales desde Costa Rica.</p>
+    <h1>LUIS<span class="accent">CAMPOS</span></h1>
+    <p class="hero-sub">Diseño gráfico y comunicación visual. Estudiante en ULACIT, actualmente pasante de diseño en Pozuelo — marca, editorial, ilustración y empaque desde Costa Rica.</p>
   </div>
   <div class="scroll-cue"><span class="bar"></span> Scroll</div>
 </section>
@@ -368,15 +399,16 @@
 <section class="about" id="sobre-mi">
   <div class="about-grid">
     <div class="about-text">
-      <p>Diseñador gráfico y estudiante de Comunicación Visual, enfocado en identidad de marca, empaque y producción editorial.</p>
-      <p>Trabajo entre lo académico y lo aplicado: sistemas de marca completos, dielines listos para imprenta, afiches editoriales e ilustración — siempre cuidando el detalle tipográfico y la consistencia visual de principio a fin.</p>
-      <p>Actualmente en pasantía de diseño gráfico en Pozuelo, donde apoyo el desarrollo de material visual y la organización de activos de empaque dentro de un entorno de bienes de consumo (FMCG).</p>
+      <p>Diseñador gráfico y estudiante de Comunicación Visual, enfocado en identidad de marca, diseño editorial e ilustración.</p>
+      <p>Trabajo entre lo académico y lo aplicado: sistemas de marca completos, piezas editoriales, ilustración y proyectos de empaque — siempre cuidando el detalle tipográfico y la consistencia visual de principio a fin.</p>
+      <p>Actualmente en pasantía de diseño gráfico en Pozuelo, donde desarrollo materiales visuales para las iniciativas de marketing y comunicación de la marca, colaborando con el equipo creativo en formatos digitales e impresos.</p>
     </div>
     <div class="spec-sheet">
       <div class="label">Ficha — Luis Enrique Campos Barquero</div>
       <div class="spec-row"><span>Rol</span><span>Diseñador Gráfico</span></div>
       <div class="spec-row"><span>Con base en</span><span>San José, Costa Rica</span></div>
-      <div class="spec-row"><span>Formación</span><span>Lic. Diseño Gráfico — ULACIT</span></div>
+      <div class="spec-row"><span>Formación</span><span>Bach. Diseño Gráfico — ULACIT</span></div>
+      <div class="spec-row"><span>Graduación</span><span>2027</span></div>
       <div class="spec-row"><span>Pasantía actual</span><span>Pozuelo — Nov 2025</span></div>
       <div class="spec-row"><span>Herramientas</span><span>Illustrator / Photoshop</span></div>
       <div class="spec-row"><span>Idiomas</span><span>Español (nativo), Inglés C1</span></div>
@@ -426,6 +458,18 @@
         <span class="card-cat">Empaque</span>
         <div class="card-title">Minted Tea</div>
         <p class="card-desc">Caja de té — ilustración, patrón y dieline.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="editorial"
+      data-images='["assets/MM_01.jpg","assets/MM_02.jpg","assets/MM_03.jpg","assets/MM_04.jpg","assets/MM_05.jpg","assets/MM_06.jpg","assets/MM_07.jpg","assets/MM_08.jpg","assets/MM_09.jpg","assets/MM_10.jpg","assets/MM_11.jpg","assets/MM_12.jpg","assets/MM_13.jpg","assets/MM_14.jpg","assets/MM_15.jpg","assets/MM_16.jpg","assets/MM_17.jpg","assets/MM_18.jpg","assets/MM_19.jpg","assets/MM_20.jpg","assets/MM_21.jpg","assets/MM_22.jpg","assets/MM_23.jpg","assets/MM_24.jpg","assets/MM_25.jpg","assets/MM_26.jpg","assets/MM_27.jpg","assets/MM_28.jpg","assets/MM_29.jpg","assets/MM_30.jpg","assets/MM_31.jpg"]'
+      data-title="Manual de Mercaderismo" data-desc="Manual de inducción de 31 páginas para el equipo de mercaderistas de Pozuelo. Diseño editorial completo: sistema de retícula, jerarquía de información, iconografía, ilustración de personajes y diagramación de procesos paso a paso para uso interno en punto de venta.">
+      <div class="card-img"><img src="assets/MM_01.jpg" alt="Manual de Mercaderismo — Pozuelo" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Editorial</span>
+        <div class="card-title">Manual de Mercaderismo</div>
+        <p class="card-desc">Manual de inducción de 31 páginas — Pozuelo.</p>
       </div>
     </div>
 
@@ -485,9 +529,9 @@
     </div>
 
     <div class="card" data-cat="branding"
-      data-images='["assets/ext01_cover.jpg","assets/ext03_problema.jpg","assets/ext04_moodboard.jpg","assets/ext05_bocetaje.jpg","assets/ext07_rebranding.jpg","assets/ext09_papeleria.jpg","assets/ext17_banner.jpg","assets/ext20_camisetas.jpg"]'
-      data-title="Exterminio Total" data-desc="Propuesta de re-branding completa para un servicio de control de plagas: investigación de público, moodboard, bocetaje, sistema de logotipo, papelería, piezas para redes sociales, banners y aplicaciones textiles. Proyecto en conjunto con Marcer Vargas.">
-      <div class="card-img"><img src="assets/ext01_cover.jpg" alt="Re-branding Exterminio Total"></div>
+      data-images='["assets/ET_01.jpg","assets/ET_02.jpg","assets/ET_03.jpg","assets/ET_04.jpg","assets/ET_05.jpg","assets/ET_06.jpg","assets/ET_07.jpg","assets/ET_08.jpg","assets/ET_09.jpg","assets/ET_10.jpg","assets/ET_11.jpg","assets/ET_12.jpg","assets/ET_13.jpg","assets/ET_14.jpg","assets/ET_15.jpg","assets/ET_16.jpg","assets/ET_17.jpg","assets/ET_18.jpg","assets/ET_19.jpg","assets/ET_20.jpg","assets/ET_21.jpg"]'
+      data-title="Exterminio Total" data-desc="Propuesta de re-branding completa para un servicio de control de plagas: investigación de público, moodboard, bocetaje, sistema de logotipo, papelería, piezas para redes sociales, banners y aplicaciones textiles. Presentación completa de 21 páginas. Proyecto en conjunto con Marcer Vargas.">
+      <div class="card-img"><img src="assets/ET_01.jpg" alt="Re-branding Exterminio Total" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Branding</span>
@@ -549,9 +593,9 @@
   <div class="section-head">
     <div>
       <span class="tag">Trayectoria</span>
-      <h2 class="display">Experiencia</h2>
+      <h2 class="display">Experiencia laboral</h2>
     </div>
-    <p>Formación y práctica profesional en curso.</p>
+    <p>Práctica profesional en curso.</p>
   </div>
 
   <div class="exp-item">
@@ -559,13 +603,24 @@
     <div>
       <div class="exp-role">Pasante de Diseño Gráfico</div>
       <div class="exp-org">Pozuelo</div>
-      <p class="exp-desc">Desarrollo de activos gráficos y material de empaque para una marca de consumo masivo. Colaboración con el equipo creativo en formatos digitales e impresos, manteniendo consistencia de marca y estándares de calidad. Organización de archivos y librerías de activos digitales para optimizar el flujo de trabajo del equipo.</p>
+      <p class="exp-desc">Desarrollo de activos gráficos y materiales visuales en apoyo a las iniciativas de marketing y comunicación de la marca. Colaboración con el equipo creativo para producir contenido en formatos digitales e impresos, manteniendo la consistencia de marca y los estándares de calidad. Participación activa en la ideación y ejecución de conceptos visuales, incorporando retroalimentación del supervisor para refinar los entregables. Gestión y organización de archivos de diseño y librerías de activos para optimizar los flujos de producción del equipo.</p>
     </div>
   </div>
-  <div class="exp-item">
-    <div class="exp-date">May 2024 — En curso</div>
+</section>
+
+<section id="educacion">
+  <div class="section-head">
     <div>
-      <div class="exp-role">Lic. en Diseño Gráfico y Comunicación Visual</div>
+      <span class="tag">Formación</span>
+      <h2 class="display">Educación</h2>
+    </div>
+    <p>Formación académica y capacitación complementaria.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-date">May 2024 — Graduación 2027</div>
+    <div>
+      <div class="exp-role">Bachillerato en Diseño Gráfico y Comunicación Visual</div>
       <div class="exp-org">ULACIT</div>
       <p class="exp-desc">Enfoque en narrativa visual, principios de motion design y producción de medios digitales.</p>
     </div>
@@ -576,6 +631,22 @@
       <div class="exp-role">Bachillerato Internacional (IB)</div>
       <div class="exp-org">C.T.P.R. San Carlos</div>
       <p class="exp-desc">Currículo internacional con énfasis en pensamiento crítico, comunicación y análisis.</p>
+    </div>
+  </div>
+  <div class="exp-item">
+    <div class="exp-date">Dic 2025 — Feb 2026</div>
+    <div>
+      <div class="exp-role">Power BI · Excel Avanzado</div>
+      <div class="exp-org">Growup Data Analytics</div>
+      <p class="exp-desc">Análisis y visualización de datos con Power BI (18 hrs) y Excel avanzado — tablas dinámicas y Excel BI (18 hrs).</p>
+    </div>
+  </div>
+  <div class="exp-item">
+    <div class="exp-date">2021</div>
+    <div>
+      <div class="exp-role">English Program for Adults — TOEIC (C1)</div>
+      <div class="exp-org">Centro Cultural Costarricense-Norteamericano</div>
+      <p class="exp-desc">Certificación de inglés avanzado nivel C1.</p>
     </div>
   </div>
 
@@ -632,7 +703,7 @@
     <div class="lightbox-media">
       <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
       <img id="lightboxImg" src="" alt="">
-      <video id="lightboxVideo" controls playsinline style="display:none;"></video>
+      <video id="lightboxVideo" controls playsinline preload="metadata" style="display:none;"></video>
       <button class="lightbox-nav next" id="lightboxNext">›</button>
     </div>
     <div class="lightbox-cap">
@@ -711,6 +782,22 @@
     lightboxPrev.classList.toggle('hidden', !show);
     lightboxNext.classList.toggle('hidden', !show);
   }
+
+  // Accesibilidad: las tarjetas se pueden abrir con teclado
+  cards.forEach(c=>{
+    c.setAttribute('tabindex','0');
+    c.setAttribute('role','button');
+    c.setAttribute('aria-label','Ver proyecto: ' + (c.dataset.title || ''));
+    c.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); c.click(); }
+    });
+  });
+
+  // Carga diferida para todas las imágenes de las tarjetas
+  document.querySelectorAll('.card-img img').forEach(img=>{
+    if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+    img.setAttribute('decoding','async');
+  });
 
   cards.forEach(c=>{
     c.addEventListener('click', ()=>{
