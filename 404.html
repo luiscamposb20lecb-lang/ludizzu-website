@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada — Luis Campos</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/favicon.ico">
+<meta name="theme-color" content="#0b0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Space+Mono:wght@400&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d10; --ink:#f3ede2; --muted:#8b8f97;
+    --pink:#f0a8bb; --line:#2a2e35;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:6vw; text-align:center;
+  }
+  .code{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(90px,22vw,240px); line-height:0.85;
+    color:var(--pink); letter-spacing:0.01em;
+  }
+  h1{
+    font-family:'Anton',sans-serif; text-transform:uppercase;
+    font-size:clamp(22px,4vw,38px); margin:18px 0 14px;
+  }
+  p{ color:var(--muted); font-size:15px; max-width:420px; margin:0 auto 32px; }
+  a.back{
+    display:inline-block; text-decoration:none;
+    font-family:'Space Mono',monospace; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--ink); border:1px solid var(--line);
+    padding:13px 26px; transition:border-color .2s ease,color .2s ease;
+  }
+  a.back:hover{ border-color:var(--pink); color:var(--pink); }
+  .mark{
+    font-family:'UnifrakturCook',serif; font-size:26px;
+    color:var(--ink); display:block; margin-bottom:26px; opacity:0.8;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <span class="mark">Ludizzu</span>
+    <div class="code">404</div>
+    <h1>Página no encontrada</h1>
+    <p>La página que buscás no existe o cambió de dirección.</p>
+    <a class="back" href="./">Volver al portafolio</a>
+  </div>
+</body>
+</html>

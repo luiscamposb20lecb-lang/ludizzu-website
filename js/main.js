@@ -44,6 +44,7 @@
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxDesc = document.getElementById('lightboxDesc');
   const lightboxCount = document.getElementById('lightboxCount');
+  const lightboxLink = document.getElementById('lightboxLink');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxPrev = document.getElementById('lightboxPrev');
   const lightboxNext = document.getElementById('lightboxNext');
@@ -99,13 +100,31 @@
       stopVideo();
       lightboxTitle.textContent = c.dataset.title;
       lightboxDesc.textContent = c.dataset.desc;
+
+      // Enlace externo opcional (por ejemplo, el PDF completo de un proyecto)
+      if(c.dataset.link){
+        lightboxLink.href = c.dataset.link;
+        lightboxLink.textContent = c.dataset.linkLabel || 'Ver documento completo';
+        lightboxLink.hidden = false;
+      } else {
+        lightboxLink.hidden = true;
+        lightboxLink.removeAttribute('href');
+      }
+
       if(c.dataset.video){
         isVideo = true;
         currentImages = [c.dataset.video];
         currentIndex = 0;
       } else if(c.dataset.images){
         isVideo = false;
-        currentImages = JSON.parse(c.dataset.images);
+        // Si el JSON viniera mal formado, se cae con elegancia en vez de romper el lightbox
+        try {
+          currentImages = JSON.parse(c.dataset.images);
+        } catch (err) {
+          console.error('data-images con formato invalido en:', c.dataset.title, err);
+          currentImages = c.dataset.img ? [c.dataset.img]
+                        : [c.querySelector('.card-img img').getAttribute('src')];
+        }
         currentIndex = 0;
       } else {
         isVideo = false;
@@ -116,6 +135,9 @@
       lightbox.classList.add('open');
     });
   });
+
+  // El enlace abre en pestaña nueva; evitamos que el clic cierre el lightbox
+  lightboxLink.addEventListener('click', (e)=>{ e.stopPropagation(); });
 
   lightboxPrev.addEventListener('click', (e)=>{
     e.stopPropagation();

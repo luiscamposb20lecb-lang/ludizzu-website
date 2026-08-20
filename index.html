@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luis Campos — Portafolio Gráfico</title>
-<meta name="description" content="Portafolio de diseño gráfico y comunicación visual de Luis Enrique Campos Barquero.">
+<meta name="description" content="Portafolio de diseño gráfico y comunicación visual de Luis Enrique Campos Barquero. Marca, empaque, editorial, ilustración y fotografía desde Costa Rica.">
+<meta name="author" content="Luis Enrique Campos Barquero">
+<link rel="canonical" href="https://ludizzu.github.io/portafolio/">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ludizzu — Luis Campos">
+<meta property="og:title" content="Luis Campos — Portafolio Gráfico">
+<meta property="og:description" content="Marca, empaque, editorial, ilustración y fotografía desde Costa Rica.">
+<meta property="og:image" content="https://ludizzu.github.io/portafolio/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luis Campos — Portafolio Gráfico">
+<meta name="twitter:description" content="Marca, empaque, editorial, ilustración y fotografía desde Costa Rica.">
+<meta name="twitter:image" content="https://ludizzu.github.io/portafolio/assets/og-image.jpg">
 
 <!-- Favicon — las dos "z" de Ludizzu (UnifrakturCook) en rosa #f0a8bb -->
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -12,6 +28,11 @@
 <link rel="alternate icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
 <meta name="theme-color" content="#0b0d10">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Precarga de la portada: solo se descarga la variante que corresponde -->
+<link rel="preload" as="image" href="assets/hero-desktop.jpg" media="(min-width: 641px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-mobile.jpg" media="(max-width: 640px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
@@ -37,8 +58,8 @@
   <a class="brandmark" href="#top" id="brandHome" aria-label="Ludizzu — volver al inicio">Ludizzu</a>
   <nav>
     <ul>
-      <li><a href="#trabajo">Trabajo</a></li>
       <li><a href="#sobre-mi">Perfil</a></li>
+      <li><a href="#trabajo">Trabajo</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#educacion">Educación</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -52,14 +73,14 @@
     <!-- Vertical para teléfono, horizontal para escritorio -->
     <source media="(max-width: 640px)" srcset="assets/hero-mobile.jpg">
     <source media="(min-width: 641px)" srcset="assets/hero-desktop.jpg">
-    <img src="assets/hero-desktop.jpg" alt="Luis Campos — retrato" fetchpriority="high" decoding="async">
+    <img src="assets/hero-desktop.jpg" alt="Luis Campos — retrato" width="2400" height="1350" fetchpriority="high" decoding="async">
   </picture>
   <div class="hero-content">
     <div class="eyebrow-row">
       <span class="mono">Portafolio gráfico — 2026</span>
     </div>
     <h1>LUIS<span class="accent">CAMPOS</span></h1>
-    <p class="hero-sub">Diseño gráfico y comunicación visual. Estudiante en ULACIT, actualmente pasante de diseño en Pozuelo — marca, editorial, ilustración y empaque desde Costa Rica.</p>
+    <p class="hero-sub">Diseñador Gráfico y Comunicador Visual - Todo lo que hago lo hago porque lo siento</p>
   </div>
   <div class="scroll-cue"><span class="bar"></span> Scroll</div>
 </section>
@@ -79,7 +100,7 @@
       <div class="spec-row"><span>Formación</span><span>Bach. Diseño Gráfico — ULACIT</span></div>
       <div class="spec-row"><span>Graduación</span><span>2027</span></div>
       <div class="spec-row"><span>Pasantía actual</span><span>Pozuelo — Nov 2025</span></div>
-      <div class="spec-row"><span>Herramientas</span><span>Illustrator / Photoshop</span></div>
+      <div class="spec-row"><span>Herramientas</span><span>Illustrator / Photoshop / InDesign</span></div>
       <div class="spec-row"><span>Idiomas</span><span>Español (nativo), Inglés C1</span></div>
       <div class="spec-row"><span>Contacto</span><span>luiscamposb20.lecb@gmail.com</span></div>
     </div>
@@ -102,6 +123,7 @@
     <button class="filter-btn" data-filter="editorial">Posters &amp; Editorial</button>
     <button class="filter-btn" data-filter="branding">Branding</button>
     <button class="filter-btn" data-filter="ilustracion">Ilustración</button>
+    <button class="filter-btn" data-filter="foto">Fotografía</button>
     <button class="filter-btn" data-filter="merch">Merch</button>
     <button class="filter-btn" data-filter="motion">Motion</button>
   </div>
@@ -110,7 +132,7 @@
 
     <div class="card" data-cat="empaque" data-img="assets/cookiebox-1.jpg"
       data-title="Dolcezza" data-desc="Dieline de empaque para caja de galletas estilo Crumbl. Tipografía serif editorial en blanco sobre rojo saturado, con justificación de diseño estructurada en 10 pasos.">
-      <div class="card-img"><img src="assets/cookiebox-1.jpg" alt="Empaque Dolcezza"></div>
+      <div class="card-img"><img src="assets/cookiebox-1.jpg" alt="Empaque Dolcezza" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Empaque</span>
@@ -119,9 +141,9 @@
       </div>
     </div>
 
-    <div class="card" data-cat="empaque" data-img="assets/tea-1.jpg"
+    <div class="card" data-cat="empaque" data-images='["assets/MINTY_mockup.jpg","assets/tea-1.jpg"]' 
       data-title="Minted — Minty Lemon" data-desc="Sistema de empaque para té verde premium. Ilustración de personaje, patrón geométrico repetitivo y dieline funcional con información nutricional e ingredientes.">
-      <div class="card-img"><img src="assets/tea-1.jpg" alt="Empaque Minted Tea"></div>
+      <div class="card-img"><img src="assets/MINTY_mockup.jpg" alt="Empaque Minted Tea" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Empaque</span>
@@ -131,9 +153,11 @@
     </div>
 
     <div class="card" data-cat="editorial"
-      data-images='["assets/MM_01.jpg","assets/MM_02.jpg","assets/MM_03.jpg","assets/MM_04.jpg","assets/MM_05.jpg","assets/MM_06.jpg","assets/MM_07.jpg","assets/MM_08.jpg","assets/MM_09.jpg","assets/MM_10.jpg","assets/MM_11.jpg","assets/MM_12.jpg","assets/MM_13.jpg","assets/MM_14.jpg","assets/MM_15.jpg","assets/MM_16.jpg","assets/MM_17.jpg","assets/MM_18.jpg","assets/MM_19.jpg","assets/MM_20.jpg","assets/MM_21.jpg","assets/MM_22.jpg","assets/MM_23.jpg","assets/MM_24.jpg","assets/MM_25.jpg","assets/MM_26.jpg","assets/MM_27.jpg","assets/MM_28.jpg","assets/MM_29.jpg","assets/MM_30.jpg","assets/MM_31.jpg"]'
+      data-images='["assets/MM_MU_01.jpg","assets/MM_MU_02.jpg"]'
+      data-link="assets/Manual_de_Mercaderismo.pdf"
+      data-link-label="Ver el manual completo (PDF, 31 pág.)"
       data-title="Manual de Mercaderismo" data-desc="Manual de inducción de 31 páginas para el equipo de mercaderistas de Pozuelo. Diseño editorial completo: sistema de retícula, jerarquía de información, iconografía, ilustración de personajes y diagramación de procesos paso a paso para uso interno en punto de venta.">
-      <div class="card-img"><img src="assets/MM_01.jpg" alt="Manual de Mercaderismo — Pozuelo" loading="lazy"></div>
+      <div class="card-img"><img src="assets/MM_MU_01.jpg" alt="Manual de Mercaderismo — Pozuelo" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Editorial</span>
@@ -142,9 +166,21 @@
       </div>
     </div>
 
-    <div class="card" data-cat="editorial" data-img="assets/toyota_spread.jpg"
+    <div class="card" data-cat="editorial" data-img="assets/SINUIJU.jpg"
+      data-title="Sinuiju" data-desc="Diseño de empaque para un videojuego ficticio de terror y sigilo en formato de caja PS5 — portada, lomo y contraportada completos.">
+      <div class="card-img"><img src="assets/SINUIJU.jpg" alt="Portada de videojuego Sinuiju" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Editorial</span>
+        <div class="card-title">Sinuiju</div>
+        <p class="card-desc">Portada de videojuego — caja PS5 completa.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="editorial" 
+      data-images='["assets/Ambos_Mockup.jpg","assets/Portada_Mockup.jpg","assets/toyota_spread.jpg"]'
       data-title="Toyota GR — Spread Editorial" data-desc="Ejercicio de maquetación editorial a partir de material de archivo. Tratamiento tipográfico a gran escala, duotono y grid asimétrico sobre doble página.">
-      <div class="card-img"><img src="assets/toyota_spread.jpg" alt="Spread editorial Toyota GR"></div>
+      <div class="card-img"><img src="assets/Ambos_Mockup.jpg" alt="Spread editorial Toyota GR" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Editorial</span>
@@ -153,9 +189,34 @@
       </div>
     </div>
 
-    <div class="card" data-cat="editorial" data-img="assets/afiche1-1.jpg"
+    <div class="card" data-cat="editorial" 
+      data-images='["assets/370z_MU.jpg", "assets/370z.jpg"]'
+      data-title="Nissan 370z Poster" data-desc="Poster estetico con una variedad de angulos mostrando el modelo 370z de Nissan.">
+      <div class="card-img"><img src="assets/370z_MU.jpg" alt="Afiche Nissan 370z" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Editorial</span>
+        <div class="card-title">Nissan 370z Poster</div>
+        <p class="card-desc">Afiche — Gradient Map sobre varios angulos del vehiculo.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="editorial" 
+      data-images='["assets/FLYER_cambio.jpg", "assets/FLYER_cambio_02.jpg"]'
+      data-title="El Cambio Es Inevitable" data-desc="Afiche de autor construido sobre fotografía tramada en alto contraste, con lettering blackletter en verde ácido. La composición enfrenta dos bloques de texto — «El cambio es inevitable» arriba y «si el accionar es nulo» abajo — alrededor de una flor central que funciona como eje visual y simbólico.">
+      <div class="card-img"><img src="assets/FLYER_cambio.jpg" alt="Afiche El Cambio Es Inevitable" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Editorial</span>
+        <div class="card-title">El Cambio Es Inevitable</div>
+        <p class="card-desc">Afiche de autor — trama y blackletter.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="editorial" 
+      data-images='["assets/afiche1_MU.jpg","assets/afiche1_01.jpg"]'
       data-title="Garden — Love Tea" data-desc="Afiche promocional para tienda de té artesanal. Tipografía itálica a gran escala combinada con textura orgánica y paleta verde botella sobre negro.">
-      <div class="card-img"><img src="assets/afiche1-1.jpg" alt="Afiche Garden Love Tea"></div>
+      <div class="card-img"><img src="assets/afiche1_MU.jpg" alt="Afiche Garden Love Tea" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Editorial</span>
@@ -164,9 +225,10 @@
       </div>
     </div>
 
-    <div class="card" data-cat="editorial" data-img="assets/afiche2-1.jpg"
+    <div class="card" data-cat="editorial"
+      data-images='["assets/afiche2_MU.jpg","assets/afiche2_01.jpg"]'
       data-title="Soul / Sold" data-desc="Afiche editorial de identidad sonora. Tipografía impactada en alto contraste, fotografía en tono azul frío y ornamentos barrocos como contrapunto decorativo.">
-      <div class="card-img"><img src="assets/afiche2-1.jpg" alt="Afiche Soul Sold"></div>
+      <div class="card-img"><img src="assets/afiche2_MU.jpg" alt="Afiche Soul Sold" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Editorial</span>
@@ -175,20 +237,33 @@
       </div>
     </div>
 
-    <div class="card" data-cat="editorial" data-img="assets/portafolio-2.jpg"
-      data-title="Material Gráfico" data-desc="Portadas editoriales (1984 de George Orwell) y afiches de evento para noches de música electrónica — lettering, jerarquía tipográfica y composición fotográfica.">
-      <div class="card-img"><img src="assets/portafolio-2.jpg" alt="Material gráfico — portadas y afiches"></div>
+    <div class="card" data-cat="editorial"
+      data-images='["assets/MID_03.jpg", "assets/MID_01.jpg", "assets/MID_02.jpg", "assets/MID_04.jpg"]'
+      data-title="Midnight" data-desc="Serie de banners promocionales para las fiestas Midnight, de urbano latino. El sistema juega con tipografía desplazada y superpuesta, tratamiento fotográfico de alto contraste y una identidad de llama que ancla cada pieza, adaptándose a distintos formatos y artistas invitados manteniendo el mismo código visual.">
+      <div class="card-img"><img src="assets/MID_03.jpg" alt="Banners Midnight" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Editorial</span>
-        <div class="card-title">Material Gráfico</div>
-        <p class="card-desc">Portadas y afiches de evento.</p>
+        <div class="card-title">Midnight</div>
+        <p class="card-desc">Banners promocionales — urbano latino.</p>
       </div>
     </div>
 
-    <div class="card" data-cat="branding" data-img="assets/logo-2.jpg"
-      data-title="Rosa Santa" data-desc="Sistema de marca de inspiración gótica: monograma, isotipo y lockups de wordmark resueltos en cuatro paletas de color, con set tipográfico blackletter a medida.">
-      <div class="card-img"><img src="assets/logo-2.jpg" alt="Identidad Rosa Santa"></div>
+    <div class="card" data-cat="branding" data-img="assets/ATARAXIA.jpg"
+      data-title="Ataraxia" data-desc="Identidad para Ataraxia, banda alternativa costarricense. El isotipo parte de una flor ornamental que se degrada progresivamente hacia una textura líquida y cromada, representando el tránsito entre la calma y la distorsión. El wordmark usa una tipografía psicodélica de trazo blando, y todo el sistema está construido para funcionar en positivo y negativo sobre fondo claro u oscuro.">
+      <div class="card-img"><img src="assets/ATARAXIA.jpg" alt="Identidad Ataraxia" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Branding</span>
+        <div class="card-title">Ataraxia</div>
+        <p class="card-desc">Identidad — banda alternativa costarricense.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="branding"
+      data-images='["assets/RS_1.jpg", "assets/RS_2.jpg", "assets/RS_3.jpg"]'
+      data-title="Rosa Santa" data-desc="Sistema de marca de inspiración gótica: monograma, isotipo y lockups de wordmark resueltos en cuatro paletas de color, con set tipográfico blackletter a medida y patrón de repetición derivado del isotipo.">
+      <div class="card-img"><img src="assets/RS_1.jpg" alt="Identidad Rosa Santa" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Branding</span>
@@ -198,7 +273,7 @@
     </div>
 
     <div class="card" data-cat="branding"
-      data-images='["assets/AU_1.jpg","assets/AU_2.jpg","assets/AU_3.jpg","assets/AU_4.jpg","assets/AU_5.jpg"]'
+      data-images='["assets/AU_4.jpg", "assets/AU_1.jpg", "assets/AU_2.jpg", "assets/AU_3.jpg", "assets/AU_5.jpg"]'
       data-title="Aura" data-desc="Identidad de marca para una línea de chicles funcionales. El isotipo construye un cerebro a partir de las propias letras del nombre, y el sistema se declina en tres variantes de producto — Focus (ashwagandha), Calm (CBD) y Energy (cafeína) — cada una con su código cromático. Incluye paleta, sistema tipográfico (Podium Soft y Bootzy) y aplicación sobre empaque circular.">
       <div class="card-img"><img src="assets/AU_4.jpg" alt="Identidad de marca Aura" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
@@ -210,7 +285,7 @@
     </div>
 
     <div class="card" data-cat="branding"
-      data-images='["assets/ET_01.jpg","assets/ET_02.jpg","assets/ET_03.jpg","assets/ET_04.jpg","assets/ET_05.jpg","assets/ET_06.jpg","assets/ET_07.jpg","assets/ET_08.jpg","assets/ET_09.jpg","assets/ET_10.jpg","assets/ET_11.jpg","assets/ET_12.jpg","assets/ET_13.jpg","assets/ET_14.jpg","assets/ET_15.jpg","assets/ET_16.jpg","assets/ET_17.jpg","assets/ET_18.jpg","assets/ET_19.jpg","assets/ET_20.jpg","assets/ET_21.jpg"]'
+      data-images='["assets/ET_01.jpg","assets/ET_02.jpg","assets/ET_03.jpg","assets/ET_04.jpg","assets/ET_05.jpg","assets/ET_06.jpg","assets/ET_07.jpg","assets/ET_08.jpg","assets/ET_09.jpg","assets/ET_10.jpg","assets/ET_11.jpg","assets/ET_12.jpg","assets/ET_13.jpg","assets/ET_14.jpg","assets/ET_15.jpg","assets/ET_16.jpg","assets/ET_17.jpg"]'
       data-title="Exterminio Total" data-desc="Propuesta de re-branding completa para un servicio de control de plagas: investigación de público, moodboard, bocetaje, sistema de logotipo, papelería, piezas para redes sociales, banners y aplicaciones textiles. Presentación completa de 21 páginas. Proyecto en conjunto con Marcer Vargas.">
       <div class="card-img"><img src="assets/ET_01.jpg" alt="Re-branding Exterminio Total" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
@@ -221,9 +296,10 @@
       </div>
     </div>
 
-    <div class="card" data-cat="ilustracion" data-img="assets/ilustracion_digital.jpg"
-      data-title="Ilustración Digital" data-desc="Serie de ilustración digital de estilo cómic/manga — línea marcada, paletas saturadas de dos y tres colores, y composición dinámica de personajes.">
-      <div class="card-img"><img src="assets/ilustracion_digital.jpg" alt="Ilustración digital"></div>
+    <div class="card" data-cat="ilustracion"
+      data-images='["assets/DIG_05.jpg", "assets/DIG_01.jpg", "assets/DIG_02.jpg", "assets/DIG_03.jpg", "assets/DIG_04.jpg", "assets/DIG_06.jpg", "assets/DIG_07.jpg", "assets/DIG_08.jpg"]'
+      data-title="Ilustración Digital" data-desc="Serie de ilustración digital de personajes — línea marcada, paletas saturadas de dos y tres colores, y composición dinámica. Trabajo desarrollado en Procreate y Photoshop.">
+      <div class="card-img"><img src="assets/DIG_05.jpg" alt="Ilustración digital" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Ilustración</span>
@@ -232,9 +308,10 @@
       </div>
     </div>
 
-    <div class="card" data-cat="ilustracion" data-img="assets/ilustracion_fisica.jpg"
-      data-title="Ilustración Física" data-desc="Trabajo de ilustración a mano en tinta y lápiz — bocetos de cuaderno, estudios de personaje y composiciones exploratorias en blanco y negro.">
-      <div class="card-img"><img src="assets/ilustracion_fisica.jpg" alt="Ilustración física"></div>
+    <div class="card" data-cat="ilustracion"
+      data-images='["assets/FIS_01.jpg", "assets/FIS_02.jpg", "assets/FIS_03.jpg", "assets/FIS_04.jpg", "assets/FIS_05.jpg", "assets/FIS_06.jpg", "assets/FIS_07.jpg", "assets/FIS_08.jpg", "assets/FIS_09.jpg"]'
+      data-title="Ilustración Física" data-desc="Trabajo de ilustración a mano en tinta y lápiz — estudios de personaje, composiciones exploratorias y páginas de cuaderno en blanco y negro.">
+      <div class="card-img"><img src="assets/FIS_01.jpg" alt="Ilustración física" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Ilustración</span>
@@ -243,10 +320,46 @@
       </div>
     </div>
 
+    <div class="card" data-cat="ilustracion"
+      data-images='["assets/STK_3.jpg", "assets/STK_1.jpg", "assets/STK_2.jpg"]'
+      data-title="Stickers" data-desc="Serie de stickers troquelados de ilustración propia. Piezas de línea marcada y color plano saturado pensadas para impresión en vinil, con contorno de corte y silueta legible a tamaño pequeño.">
+      <div class="card-img"><img src="assets/STK_3.jpg" alt="Serie de stickers" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Ilustración</span>
+        <div class="card-title">Stickers</div>
+        <p class="card-desc">Serie troquelada — vinil.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="foto"
+      data-images='["assets/PROD_01.jpg", "assets/PROD_02.jpg", "assets/PROD_03.jpg", "assets/PROD_04.jpg", "assets/PROD_05.jpg", "assets/PROD_06.jpg", "assets/PROD_07.jpg"]'
+      data-title="Fotografía de Producto" data-desc="Fotografía de producto y de alimentos con dirección de arte propia: montaje, iluminación, estilismo y retoque. Incluye piezas para repostería y bebida trabajadas para uso en redes y material promocional.">
+      <div class="card-img"><img src="assets/PROD_01.jpg" alt="Fotografía de producto" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Fotografía</span>
+        <div class="card-title">Fotografía de Producto</div>
+        <p class="card-desc">Producto y alimentos — luz y retoque.</p>
+      </div>
+    </div>
+
+    <div class="card" data-cat="foto"
+      data-images='["assets/ART_01.jpg", "assets/ART_02.jpg", "assets/ART_03.jpg", "assets/ART_04.jpg", "assets/ART_05.jpg", "assets/ART_06.jpg", "assets/ART_07.jpg", "assets/ART_08.jpg"]'
+      data-title="Fotografía Artística" data-desc="Trabajo fotográfico personal: retrato, atmósfera y color. Serie enfocada en la construcción de ambiente mediante luz de contraste y tratamiento cromático en postproducción.">
+      <div class="card-img"><img src="assets/ART_01.jpg" alt="Fotografía artística" loading="lazy"></div>
+      <div class="card-view">Ver proyecto</div>
+      <div class="card-body">
+        <span class="card-cat">Fotografía</span>
+        <div class="card-title">Fotografía Artística</div>
+        <p class="card-desc">Retrato y atmósfera — trabajo personal.</p>
+      </div>
+    </div>
+
     <div class="card" data-cat="merch"
       data-images='["assets/camisetas_01.jpg","assets/camisetas_02.jpg","assets/camisetas_03.jpg"]'
       data-title="Diseños de Camisetas" data-desc="Cápsula de estampados para camiseta oversize — ilustración de radiografías de animales, figuras vintage y estudios botánicos, cada uno con su propio nombre y mockup en blanco y negro.">
-      <div class="card-img"><img src="assets/camisetas_01.jpg" alt="Diseños de camisetas"></div>
+      <div class="card-img"><img src="assets/camisetas_01.jpg" alt="Diseños de camisetas" loading="lazy"></div>
       <div class="card-view">Ver proyecto</div>
       <div class="card-body">
         <span class="card-cat">Merch</span>
@@ -257,7 +370,7 @@
 
     <div class="card" data-cat="motion" data-video="assets/menu.mp4" data-poster="assets/menu_poster.jpg"
       data-title="Menú — Motion" data-desc="Pieza de motion graphics para presentación de menú. Animación tipográfica y transiciones producidas para formato de video.">
-      <div class="card-img"><img src="assets/menu_poster.jpg" alt="Motion — Menú"></div>
+      <div class="card-img"><img src="assets/menu_poster.jpg" alt="Motion — Menú" loading="lazy"></div>
       <div class="card-view">Ver video</div>
       <div class="card-body">
         <span class="card-cat">Motion</span>
@@ -332,17 +445,29 @@
   </div>
 
   <div style="margin-top:56px;">
-    <span class="tag" style="display:block;margin-bottom:18px;">Herramientas &amp; competencias</span>
+    <span class="tag" style="display:block;margin-bottom:18px;">Herramientas</span>
     <div class="skills-wrap">
       <span class="chip red">Adobe Illustrator</span>
       <span class="chip red">Adobe Photoshop</span>
-      <span class="chip">Procreate</span>
+      <span class="chip red">Adobe InDesign</span>
+      <span class="chip">Figma</span>
       <span class="chip">After Effects</span>
+      <span class="chip">DaVinci Resolve</span>
+      <span class="chip">Procreate</span>
       <span class="chip">Blender</span>
       <span class="chip">Power BI</span>
       <span class="chip">Excel avanzado</span>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <span class="tag" style="display:block;margin-bottom:18px;">Competencias</span>
+    <div class="skills-wrap">
       <span class="chip">Identidad de marca</span>
       <span class="chip">Diseño editorial</span>
+      <span class="chip">Diseño de empaque</span>
+      <span class="chip">Ilustración</span>
+      <span class="chip">Fotografía y retoque</span>
       <span class="chip">Control de calidad</span>
       <span class="chip">Inglés C1 — TOEIC</span>
     </div>
@@ -391,6 +516,7 @@
       <div>
         <h3 id="lightboxTitle"></h3>
         <p id="lightboxDesc"></p>
+        <a id="lightboxLink" class="lightbox-link" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
       </div>
       <span class="lightbox-count mono" id="lightboxCount"></span>
     </div>
